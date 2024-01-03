@@ -9,12 +9,12 @@ void setup() {
   Serial.begin(115200);
 
   WiFi.mode(WIFI_AP);
-  WiFi.softAP("SSID_NAME", "PASS", 2, 0, 5);
+  WiFi.softAP("HOHEN", "12345678", 2, 0, 5);
   
   wifiServer.begin();
 }
 
-void tcp()
+void receive()
 {
     if (wifiClient.connected()) //Cliente conectado
     {
@@ -43,5 +43,5 @@ void tcp()
 }
 
 void loop() {
-  tcp();
+  receive();
 }
